@@ -6,7 +6,6 @@
     <title>Player Numbers</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
         body {
             font-family: 'Poppins', sans-serif;
             padding: 20px;
@@ -62,38 +61,29 @@
             const maxPlayers = parseInt(document.getElementById('maxPlayers').value);
             const playerList = document.getElementById('playerList');
             const stats = document.getElementById('stats');
-
             if (isNaN(maxPlayers) || maxPlayers < 1) {
                 alert('Please enter a valid number greater than 0.');
                 return;
             }
-
             playerList.innerHTML = '';
-
             for (let i = 1; i <= maxPlayers; i++) {
                 const playerDiv = document.createElement('div');
                 playerDiv.className = 'player';
-
                 const label = document.createElement('label');
                 label.textContent = `Player ${i}`;
-
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.addEventListener('change', updateStats);
-
                 playerDiv.appendChild(label);
                 playerDiv.appendChild(checkbox);
                 playerList.appendChild(playerDiv);
             }
-
             updateStats();
         }
-
         function updateStats() {
             const checkboxes = document.querySelectorAll('.player input[type="checkbox"]');
             const selectedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
             const notSelectedCount = checkboxes.length - selectedCount;
-
             document.getElementById('selectedCount').textContent = selectedCount;
             document.getElementById('notSelectedCount').textContent = notSelectedCount;
         }
