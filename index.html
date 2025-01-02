@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Numbers</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             padding: 20px;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
         }
         .player-list {
             margin-top: 20px;
@@ -23,6 +27,12 @@
         .stats {
             margin-top: 20px;
         }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -36,6 +46,11 @@
     <div class="stats" id="stats">
         <p>Selected: <span id="selectedCount">0</span></p>
         <p>Not Selected: <span id="notSelectedCount">0</span></p>
+    </div>
+
+    <div class="footer">
+        Created by: amynanel
+        Sponsored by: discord.gg/rai
     </div>
 
     <script>
